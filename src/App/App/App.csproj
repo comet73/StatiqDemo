@@ -1,0 +1,507 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <WarningLevel>4</WarningLevel>
+    <CustomCommands>
+      <CustomCommands>
+        <Command>
+          <type>AfterBuild</type>
+          <command>cp /opt/homebrew/Cellar/libsass/3.6.6/lib/libsass.dylib ./bin/Debug/net7.0</command>
+          <externalConsole>True</externalConsole>
+        </Command>
+      </CustomCommands>
+    </CustomCommands>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Statiq.Web" Version="1.0.0-beta.59" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="input\" />
+    <None Remove="input\posts\" />
+    <None Remove="input\pages\" />
+    <None Remove="theme\input\content\" />
+    <None Remove="input\content\" />
+    <None Remove="theme\input\zentral\" />
+    <None Remove="input\zentral\" />
+    <None Remove="input\navigation\Bezirk1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="input\" />
+    <Folder Include="input\posts\" />
+    <Folder Include="input\pages\" />
+    <Folder Include="theme\input\content\" />
+    <Folder Include="input\content\" />
+    <Folder Include="theme\input\zentral\" />
+    <Folder Include="input\zentral\" />
+    <Folder Include="input\navigation\Bezirk1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="theme\LICENSE.md">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\.editorconfig">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\README.md">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\settings.yml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\favicon.ico">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\_layout.cshtml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\_head.cshtml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\_posts.cshtml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\_footer.cshtml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\_sidebar.cshtml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\_page-after-content.cshtml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\_navbar.cshtml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\search.cshtml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\_header.cshtml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\_scripts.cshtml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\_common-after-content.cshtml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\_post-after-content.cshtml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\_post-comments-giscus.cshtml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\_post-comments.cshtml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\feed.yml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\_copyright.cshtml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\_post.cshtml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\index.cshtml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\_navigation.cshtml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\posts\index.cshtml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\js\clean-blog.js">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\scss\clean-blog.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\scss\_bootstrap-variable-overrides.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\scss\_copyright.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\scss\_bootstrap-variables.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\scss\_navbar.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\scss\_variables.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\scss\_blockquote.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\scss\_badge.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\scss\_extras.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\scss\_variable-overrides.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\scss\_buttons.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\scss\_overrides.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\scss\_footer.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\scss\_post.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\scss\_masthead.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\tags\index.cshtml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\js\bootstrap.bundle.min.js.map">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\js\bootstrap.bundle.min.js">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\_functions.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\_containers.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\_toasts.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\_navbar.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\_variables.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\_progress.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\_offcanvas.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\_popover.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\_breadcrumb.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\_carousel.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\_badge.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\_helpers.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\_placeholders.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\_accordion.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\_button-group.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\_reboot.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\_utilities.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\_forms.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\_buttons.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\_tables.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\_images.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\_close.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\_list-group.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\_pagination.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\_card.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\_grid.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\_mixins.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\_nav.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\_alert.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\_transitions.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\_tooltip.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\_root.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\_modal.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\_spinners.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\_type.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\_dropdown.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\_maps.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\startbootstrap-clean-blog\js\scripts.js">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\startbootstrap-clean-blog\scss\_variables.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\startbootstrap-clean-blog\scss\_global.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\fontawesome-free\css\all.min.css">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\fontawesome-free\webfonts\fa-solid-900.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\fontawesome-free\webfonts\fa-regular-400.woff2">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\fontawesome-free\webfonts\fa-regular-400.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\fontawesome-free\webfonts\fa-solid-900.woff2">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\fontawesome-free\webfonts\fa-brands-400.woff2">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\fontawesome-free\webfonts\fa-brands-400.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\forms\_floating-labels.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\forms\_input-group.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\forms\_form-check.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\forms\_form-text.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\forms\_form-range.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\forms\_form-select.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\forms\_form-control.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\forms\_validation.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\forms\_labels.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\mixins\_reset-text.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\mixins\_table-variants.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\mixins\_image.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\mixins\_deprecate.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\mixins\_lists.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\mixins\_gradients.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\mixins\_text-truncate.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\mixins\_visually-hidden.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\mixins\_container.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\mixins\_utilities.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\mixins\_breakpoints.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\mixins\_box-shadow.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\mixins\_forms.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\mixins\_buttons.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\mixins\_transition.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\mixins\_caret.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\mixins\_resize.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\mixins\_color-scheme.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\mixins\_list-group.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\mixins\_pagination.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\mixins\_clearfix.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\mixins\_grid.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\mixins\_banner.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\mixins\_alert.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\mixins\_backdrop.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\mixins\_border-radius.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\utilities\_api.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\helpers\_ratio.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\helpers\_vr.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\helpers\_visually-hidden.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\helpers\_color-bg.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\helpers\_clearfix.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\helpers\_text-truncation.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\helpers\_stacks.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\helpers\_position.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\helpers\_stretched-link.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\helpers\_colored-links.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\bootstrap\scss\vendor\_rfs.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\startbootstrap-clean-blog\scss\sections\_footer.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\startbootstrap-clean-blog\scss\sections\_post.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\startbootstrap-clean-blog\scss\sections\_masthead.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\startbootstrap-clean-blog\scss\components\_navbar.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\startbootstrap-clean-blog\scss\components\_forms.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\startbootstrap-clean-blog\scss\components\_buttons.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\startbootstrap-clean-blog\scss\variables\_colors.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\startbootstrap-clean-blog\scss\variables\_typography.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\startbootstrap-clean-blog\scss\variables\_forms.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\startbootstrap-clean-blog\scss\variables\_buttons.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\startbootstrap-clean-blog\scss\variables\_overlay.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\vendor\startbootstrap-clean-blog\scss\variables\_options.scss">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="theme\input\zentral\settings.yml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="input\navigation\Bezirk1\brand.md">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="input\navigation\Bezirk1\Unterbezirk1\brand.md">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>
